@@ -133,4 +133,4 @@ if __name__ == '__main__':
 
 
     lpb = Laplacian_Pyramid_Blending_with_mask(A, B, m, 10)
-    cv2.imwrite("lpb2.png",lpb)
+    cv2.imwrite("lpb.png",lpb)
