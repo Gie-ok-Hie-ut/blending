@@ -121,6 +121,7 @@ if __name__ == '__main__':
         kernel = np.ones((5,5),np.uint8)
         m = cv2.dilate(m,kernel,iterations=10)
         #m = cv2.erode(m,kernel,iterations = 15)
+        m = cv2.blur(m, (50, 50))
 
         # Visualize Mask
         m_parse2 = m_parse.squeeze(0).detach().cpu().numpy().argmax(0)
@@ -132,4 +133,4 @@ if __name__ == '__main__':
 
 
     lpb = Laplacian_Pyramid_Blending_with_mask(A, B, m, 10)
-    cv2.imwrite("lpb.png",lpb)
+    cv2.imwrite("lpb2.png",lpb)
